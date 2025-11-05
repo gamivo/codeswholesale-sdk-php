@@ -52,6 +52,7 @@ abstract class AbstractCollectionResource extends Resource implements \IteratorA
         return $this->values;
     }
 
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new \ArrayIterator($this->getCurrentPage()->getItems());
@@ -63,6 +64,7 @@ abstract class AbstractCollectionResource extends Resource implements \IteratorA
         return new Page(0, count($items), $items);
     }
 
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->getValues());
